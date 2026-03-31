@@ -26,11 +26,19 @@ nav{position:sticky;top:0;z-index:100;height:var(--nav-h);background:rgba(249,25
 @keyframes slideDown{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
 .page{display:none;overflow:hidden;}
 .page.active{display:block;}
-.hero{min-height:calc(100vh - var(--nav-h));padding:0 100px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.hero{min-height:calc(100vh - var(--nav-h));padding:0 100px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
 .hero-label{font-size:15px;color:var(--text-muted);letter-spacing:.04em;margin-bottom:24px;font-weight:400;}
 .hero h1{font-family:var(--font-serif);font-size:52px;font-weight:500;line-height:1.15;letter-spacing:-.02em;color:var(--text);margin-bottom:32px;max-width:860px;}
 .hero-sub{font-size:18px;color:var(--text-muted);line-height:1.6;max-width:540px;margin-bottom:40px;}
-.hero-socials{display:flex;gap:10px;justify-content:center;}
+.hero-socials{display:flex;gap:18px;justify-content:center;}
+.hero-star{position:absolute;width:32px;height:32px;object-fit:contain;pointer-events:auto;opacity:.9;--star-x:0px;--star-y:0px;--star-rot:0deg;transform:translate(var(--star-x),var(--star-y)) rotate(var(--star-rot));transition:transform .75s ease;}
+.hero-star:hover{--star-rot:180deg;}
+.hero-star-1{top:88px;left:18%;}
+.hero-star-2{top:48px;left:58%;}
+.hero-star-3{top:74px;right:14%;}
+.hero-star-4{left:10%;top:52%;}
+.hero-star-5{bottom:54px;left:49%;}
+.hero-star-6{right:24%;bottom:22%;}
 .social-btn{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border);background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;text-decoration:none;color:var(--text-muted);}
 .social-btn:hover{border-color:var(--text);color:var(--text);background:rgba(0,0,0,.04);}
 .social-btn svg{width:15px;height:15px;}
@@ -71,7 +79,7 @@ footer{background:var(--bg-dark);padding:76px 100px 68px;display:flex;align-item
 .footer-links{display:flex;gap:20px;list-style:none;}
 .footer-links a{font-size:13px;color:#777;text-decoration:none;transition:color .2s;cursor:pointer;}
 .footer-links a:hover{color:#fff;}
-.footer-socials{display:flex;gap:8px;}
+.footer-socials{display:flex;gap:16px;}
 .footer-social{width:36px;height:36px;border-radius:50%;border:1px solid #333;display:flex;align-items:center;justify-content:center;color:#777;text-decoration:none;transition:all .2s;font-size:11px;font-weight:600;cursor:pointer;}
 .footer-social:hover{border-color:#666;color:#fff;}
 .footer-copy{width:100%;text-align:center;font-size:12px;color:#444;padding-top:18px;border-top:1px solid #2a2a2a;margin-top:4px;}
@@ -100,6 +108,12 @@ footer{background:var(--bg-dark);padding:76px 100px 68px;display:flex;align-item
 @media (max-width:900px){
   nav{padding:0 40px;}.nav-links{display:none;}.hamburger{display:flex;}
   .hero{padding:0 40px;min-height:calc(100vh - var(--nav-h));}.hero h1{font-size:38px;}.hero-sub{font-size:16px;}
+  .hero-star-1{left:10%;top:96px;}
+  .hero-star-2{left:60%;top:56px;}
+  .hero-star-3{right:8%;top:88px;}
+  .hero-star-4{left:4%;top:50%;}
+  .hero-star-5{left:48%;bottom:70px;}
+  .hero-star-6{right:12%;bottom:24%;}
   .section,.experiments-section,.testimonials-section,.contact-section{padding:72px 40px;}
   .section-header h2,.contact-section h2{font-size:32px;}
   footer{padding:68px 40px 62px;}
@@ -114,6 +128,13 @@ footer{background:var(--bg-dark);padding:76px 100px 68px;display:flex;align-item
 @media (max-width:560px){
   nav{padding:0 24px;}
   .hero{padding:0 24px;min-height:calc(100vh - var(--nav-h));}.hero h1{font-size:28px;}.hero-sub{font-size:15px;}
+  .hero-star{width:24px;height:24px;}
+  .hero-star-1{left:8%;top:92px;}
+  .hero-star-2{left:70%;top:68px;}
+  .hero-star-3{right:6%;top:116px;}
+  .hero-star-4{left:3%;top:42%;}
+  .hero-star-5{left:46%;bottom:96px;}
+  .hero-star-6{right:10%;bottom:28%;}
   .section,.experiments-section,.testimonials-section,.contact-section{padding:56px 24px;}
   .section-header h2,.contact-section h2{font-size:26px;}
   footer{padding:64px 24px 60px;flex-direction:column;align-items:flex-start;gap:14px;}
